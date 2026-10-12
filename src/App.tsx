@@ -1,10 +1,18 @@
-function App() {
+import { BrowserRouter, Route, Routes } from 'react-router';
+import HomePage from './pages/HomePage';
+import RecipesPage from './pages/RecipesPage';
+import NotFoundPage from './pages/NotFound';
 
-  return (
-    <>
-      <h1>Test App</h1>
-    </>
-  )
+function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/recipes" element={<RecipesPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
-export default App
+export default App;
