@@ -1,11 +1,11 @@
 export interface Recipe {
-    id: number;
+    id: string;
     title: string;
     description: string;
     imageUrl: string;
     preparationTime: number;
-    ingredients: string[];
-    steps: string[];
+    ingredients?: string[];
+    steps?: string[];
     category: string;
     difficultyLevel: 'easy' | 'medium' | 'hard';
 }
