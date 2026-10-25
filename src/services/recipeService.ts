@@ -7,7 +7,7 @@ export async function getRecipes(): Promise<Recipe[]> {
     const snapshot = await getDocs(collection(db, 'recipes'))
 
     return snapshot.docs.map((document) => ({
-        id: document.id,
         ...document.data(),
+        id: document.id,
     })) as Recipe[]
 }
